@@ -112,7 +112,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/rounded.png")),
-						"icon;image=/sc/fiji/GraphEditor/images/wrench.png",
+						"icon;image=/images/wrench.png",
 						70, 70, "Icon");
 		shapesPalette
 				.addTemplate(
@@ -120,7 +120,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/rounded.png")),
-						"label;image=/sc/fiji/GraphEditor/images/gear.png",
+						"label;image=/images/gear.png",
 						130, 50, "Label");
 		shapesPalette
 				.addTemplate(
@@ -249,7 +249,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/bell.png")),
-						"image;image=/sc/fiji/GraphEditor/images/bell.png",
+						"image;image=/images/bell.png",
 						50, 50, "Bell");
 		imagesPalette
 				.addTemplate(
@@ -257,7 +257,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/box.png")),
-						"image;image=/sc/fiji/GraphEditor/images/box.png",
+						"image;image=/images/box.png",
 						50, 50, "Box");
 		imagesPalette
 				.addTemplate(
@@ -265,7 +265,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/cube_green.png")),
-						"image;image=/sc/fiji/GraphEditor/images/cube_green.png",
+						"image;image=/images/cube_green.png",
 						50, 50, "Cube");
 		imagesPalette
 				.addTemplate(
@@ -273,7 +273,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/dude3.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/dude3.png",
+						"roundImage;image=/images/dude3.png",
 						50, 50, "User");
 		imagesPalette
 				.addTemplate(
@@ -281,7 +281,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/earth.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/earth.png",
+						"roundImage;image=/images/earth.png",
 						50, 50, "Earth");
 		imagesPalette
 				.addTemplate(
@@ -289,7 +289,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/gear.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/gear.png",
+						"roundImage;image=/images/gear.png",
 						50, 50, "Gear");
 		imagesPalette
 				.addTemplate(
@@ -297,7 +297,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/house.png")),
-						"image;image=/sc/fiji/GraphEditor/images/house.png",
+						"image;image=/images/house.png",
 						50, 50, "Home");
 		imagesPalette
 				.addTemplate(
@@ -305,7 +305,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/package.png")),
-						"image;image=/sc/fiji/GraphEditor/images/package.png",
+						"image;image=/images/package.png",
 						50, 50, "Package");
 		imagesPalette
 				.addTemplate(
@@ -313,7 +313,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/printer.png")),
-						"image;image=/sc/fiji/GraphEditor/images/printer.png",
+						"image;image=/images/printer.png",
 						50, 50, "Printer");
 		imagesPalette
 				.addTemplate(
@@ -321,7 +321,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/server.png")),
-						"image;image=/sc/fiji/GraphEditor/images/server.png",
+						"image;image=/images/server.png",
 						50, 50, "Server");
 		imagesPalette
 				.addTemplate(
@@ -329,7 +329,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/workplace.png")),
-						"image;image=/sc/fiji/GraphEditor/images/workplace.png",
+						"image;image=/images/workplace.png",
 						50, 50, "Workplace");
 		imagesPalette
 				.addTemplate(
@@ -337,7 +337,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/wrench.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/wrench.png",
+						"roundImage;image=/images/wrench.png",
 						50, 50, "Wrench");
 
 		symbolsPalette
@@ -346,7 +346,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/cancel_end.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/cancel_end.png",
+						"roundImage;image=/images/cancel_end.png",
 						80, 80, "Cancel");
 		symbolsPalette
 				.addTemplate(
@@ -354,7 +354,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/error.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/error.png",
+						"roundImage;image=/images/error.png",
 						80, 80, "Error");
 		symbolsPalette
 				.addTemplate(
@@ -362,7 +362,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/event.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/event.png",
+						"roundImage;image=/images/event.png",
 						80, 80, "Event");
 		symbolsPalette
 				.addTemplate(
@@ -370,7 +370,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/fork.png")),
-						"rhombusImage;image=/sc/fiji/GraphEditor/images/fork.png",
+						"rhombusImage;image=/images/fork.png",
 						80, 80, "Fork");
 		symbolsPalette
 				.addTemplate(
@@ -378,7 +378,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/inclusive.png")),
-						"rhombusImage;image=/sc/fiji/GraphEditor/images/inclusive.png",
+						"rhombusImage;image=/images/inclusive.png",
 						80, 80, "Inclusive");
 		symbolsPalette
 				.addTemplate(
@@ -386,7 +386,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/link.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/link.png",
+						"roundImage;image=/images/link.png",
 						80, 80, "Link");
 		symbolsPalette
 				.addTemplate(
@@ -394,7 +394,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/merge.png")),
-						"rhombusImage;image=/sc/fiji/GraphEditor/images/merge.png",
+						"rhombusImage;image=/images/merge.png",
 						80, 80, "Merge");
 		symbolsPalette
 				.addTemplate(
@@ -402,7 +402,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/message.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/message.png",
+						"roundImage;image=/images/message.png",
 						80, 80, "Message");
 		symbolsPalette
 				.addTemplate(
@@ -410,7 +410,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/multiple.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/multiple.png",
+						"roundImage;image=/images/multiple.png",
 						80, 80, "Multiple");
 		symbolsPalette
 				.addTemplate(
@@ -418,7 +418,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/rule.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/rule.png",
+						"roundImage;image=/images/rule.png",
 						80, 80, "Rule");
 		symbolsPalette
 				.addTemplate(
@@ -426,7 +426,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/terminate.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/terminate.png",
+						"roundImage;image=/images/terminate.png",
 						80, 80, "Terminate");
 		symbolsPalette
 				.addTemplate(
@@ -434,7 +434,7 @@ public class GraphEditor extends BasicGraphEditor
 						new ImageIcon(
 								GraphEditor.class
 										.getResource("/images/timer.png")),
-						"roundImage;image=/sc/fiji/GraphEditor/images/timer.png",
+						"roundImage;image=/images/timer.png",
 						80, 80, "Timer");
 	}
 
