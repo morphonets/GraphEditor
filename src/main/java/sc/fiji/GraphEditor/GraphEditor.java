@@ -63,6 +63,7 @@ public class GraphEditor extends BasicGraphEditor
 		this("mxGraph Editor", new CustomGraphComponent(new CustomGraph()));
 	}
 
+
 	/**
 	 * 
 	 */

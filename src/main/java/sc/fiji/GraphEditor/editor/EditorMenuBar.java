@@ -32,11 +32,17 @@ import com.mxgraph.view.mxGraphView;
 
 public class EditorMenuBar extends JMenuBar
 {
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 4060203894740766714L;
+	protected final BasicGraphEditor editor;
+	protected final mxGraphComponent graphComponent;
+	protected final mxGraph graph;
+	protected mxAnalysisGraph aGraph;
+
+	protected JMenu menu = null;
+	protected JMenu submenu = null;
 
 	public enum AnalyzeType
 	{
@@ -45,12 +51,10 @@ public class EditorMenuBar extends JMenuBar
 
 	public EditorMenuBar(final BasicGraphEditor editor)
 	{
-		final mxGraphComponent graphComponent = editor.getGraphComponent();
-		final mxGraph graph = graphComponent.getGraph();
-		mxAnalysisGraph aGraph = new mxAnalysisGraph();
-
-		JMenu menu = null;
-		JMenu submenu = null;
+		this.editor = editor;
+		this.graphComponent = editor.getGraphComponent();
+		this.graph = graphComponent.getGraph();
+		this.aGraph = new mxAnalysisGraph();
 
 		// Creates the file menu
 		menu = add(new JMenu(mxResources.get("file")));
@@ -289,6 +293,8 @@ public class EditorMenuBar extends JMenuBar
 		submenu.add(editor.bind(mxResources.get("defaultStyle"), new EditorActions.StylesheetAction(
 				"default-style.xml")));
 
+		createDeveloperMenu();
+
 		// Creates the options menu
 		menu = add(new JMenu(mxResources.get("options")));
 
@@ -411,27 +417,47 @@ public class EditorMenuBar extends JMenuBar
 			});
 		}
 
+
+
+		// Creates the help menu
+		menu = add(new JMenu(mxResources.get("help")));
+
+		item = menu.add(new JMenuItem(mxResources.get("aboutGraphEditor")));
+		item.addActionListener(new ActionListener()
+		{
+			/*
+			 * (non-Javadoc)
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
+			public void actionPerformed(ActionEvent e)
+			{
+				editor.about();
+			}
+		});
+	}
+
+	public void createDeveloperMenu() {
 		// Creates a developer menu
-		menu = add(new JMenu("Generate"));
-		menu.add(editor.bind("Null Graph", new InsertGraph(GraphType.NULL, aGraph)));
-		menu.add(editor.bind("Complete Graph", new InsertGraph(GraphType.COMPLETE, aGraph)));
-		menu.add(editor.bind("Grid", new InsertGraph(GraphType.GRID, aGraph)));
-		menu.add(editor.bind("Bipartite", new InsertGraph(GraphType.BIPARTITE, aGraph)));
-		menu.add(editor.bind("Complete Bipartite", new InsertGraph(GraphType.COMPLETE_BIPARTITE, aGraph)));
-		menu.add(editor.bind("Knight's Graph", new InsertGraph(GraphType.KNIGHT, aGraph)));
-		menu.add(editor.bind("King's Graph", new InsertGraph(GraphType.KING, aGraph)));
-		menu.add(editor.bind("Petersen", new InsertGraph(GraphType.PETERSEN, aGraph)));
-		menu.add(editor.bind("Path", new InsertGraph(GraphType.PATH, aGraph)));
-		menu.add(editor.bind("Star", new InsertGraph(GraphType.STAR, aGraph)));
-		menu.add(editor.bind("Wheel", new InsertGraph(GraphType.WHEEL, aGraph)));
-		menu.add(editor.bind("Friendship Windmill", new InsertGraph(GraphType.FRIENDSHIP_WINDMILL, aGraph)));
-		menu.add(editor.bind("Full Windmill", new InsertGraph(GraphType.FULL_WINDMILL, aGraph)));
-		menu.add(editor.bind("Knight's Tour", new InsertGraph(GraphType.KNIGHT_TOUR, aGraph)));
-		menu.addSeparator();
-		menu.add(editor.bind("Simple Random", new InsertGraph(GraphType.SIMPLE_RANDOM, aGraph)));
-		menu.add(editor.bind("Simple Random Tree", new InsertGraph(GraphType.SIMPLE_RANDOM_TREE, aGraph)));
-		menu.addSeparator();
-		menu.add(editor.bind("Reset Style", new InsertGraph(GraphType.RESET_STYLE, aGraph)));
+//		menu = add(new JMenu("Generate"));
+//		menu.add(editor.bind("Null Graph", new InsertGraph(GraphType.NULL, aGraph)));
+//		menu.add(editor.bind("Complete Graph", new InsertGraph(GraphType.COMPLETE, aGraph)));
+//		menu.add(editor.bind("Grid", new InsertGraph(GraphType.GRID, aGraph)));
+//		menu.add(editor.bind("Bipartite", new InsertGraph(GraphType.BIPARTITE, aGraph)));
+//		menu.add(editor.bind("Complete Bipartite", new InsertGraph(GraphType.COMPLETE_BIPARTITE, aGraph)));
+//		menu.add(editor.bind("Knight's Graph", new InsertGraph(GraphType.KNIGHT, aGraph)));
+//		menu.add(editor.bind("King's Graph", new InsertGraph(GraphType.KING, aGraph)));
+//		menu.add(editor.bind("Petersen", new InsertGraph(GraphType.PETERSEN, aGraph)));
+//		menu.add(editor.bind("Path", new InsertGraph(GraphType.PATH, aGraph)));
+//		menu.add(editor.bind("Star", new InsertGraph(GraphType.STAR, aGraph)));
+//		menu.add(editor.bind("Wheel", new InsertGraph(GraphType.WHEEL, aGraph)));
+//		menu.add(editor.bind("Friendship Windmill", new InsertGraph(GraphType.FRIENDSHIP_WINDMILL, aGraph)));
+//		menu.add(editor.bind("Full Windmill", new InsertGraph(GraphType.FULL_WINDMILL, aGraph)));
+//		menu.add(editor.bind("Knight's Tour", new InsertGraph(GraphType.KNIGHT_TOUR, aGraph)));
+//		menu.addSeparator();
+//		menu.add(editor.bind("Simple Random", new InsertGraph(GraphType.SIMPLE_RANDOM, aGraph)));
+//		menu.add(editor.bind("Simple Random Tree", new InsertGraph(GraphType.SIMPLE_RANDOM_TREE, aGraph)));
+//		menu.addSeparator();
+//		menu.add(editor.bind("Reset Style", new InsertGraph(GraphType.RESET_STYLE, aGraph)));
 
 		menu = add(new JMenu("Analyze"));
 		menu.add(editor.bind("Is Connected", new AnalyzeGraph(AnalyzeType.IS_CONNECTED, aGraph)));
@@ -462,22 +488,6 @@ public class EditorMenuBar extends JMenuBar
 		menu.add(editor.bind("Get sources", new AnalyzeGraph(AnalyzeType.GET_SOURCES, aGraph)));
 		menu.add(editor.bind("Get sinks", new AnalyzeGraph(AnalyzeType.GET_SINKS, aGraph)));
 		menu.add(editor.bind("Is biconnected", new AnalyzeGraph(AnalyzeType.IS_BICONNECTED, aGraph)));
-
-		// Creates the help menu
-		menu = add(new JMenu(mxResources.get("help")));
-
-		item = menu.add(new JMenuItem(mxResources.get("aboutGraphEditor")));
-		item.addActionListener(new ActionListener()
-		{
-			/*
-			 * (non-Javadoc)
-			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
-			 */
-			public void actionPerformed(ActionEvent e)
-			{
-				editor.about();
-			}
-		});
 	}
 
 	/**
