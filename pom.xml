@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>29.0.0-beta-3</version>
+		<relativePath />
+	</parent>
+
+
+    <groupId>org.morphonets</groupId>
+    <artifactId>GraphEditor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>GraphEditor</name>
+	<description>SNT's GUI for neuroanatomical graphs.</description>
+    <url>https://github.com/morphonets</url>
+	<inceptionYear>2020</inceptionYear>
+	<organization>
+		<name>Morphonets</name>
+		<url>https://github.com/morphonets</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GPL v3</name>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+		<developers>
+		<developer>
+			<id>carshadi</id>
+			<name>Cameron Arshadi</name>
+			<url>https://imagej.net/User:Carshadi</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>tferr</id>
+			<name>Tiago Ferreira</name>
+			<url>https://imagej.net/User:Tiago</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<mailingLists>
+		<mailingList>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/tags/cx3d</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:git://github.com/morphonets/GraphEditor</connection>
+		<developerConnection>scm:git:git@github.com:morphonets/GraphEditor</developerConnection>
+		<url>https://github.com/morphonets/GraphEditor</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/morphonets/GraphEditor/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/morphonets/GraphEditor</url>
+	</ciManagement>
+
+	<properties>
+		<main-class>sc.fiji.GraphEditor.GraphEditor</main-class>
+		<package-name>GraphEditor</package-name>
+
+		<license.licenseName>bsdv3</license.licenseName>
+		<license.copyrightOwners>GraphEditor developers.</license.copyrightOwners>
+
+		<enforcer.skip>true</enforcer.skip>
+
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>deploy-to-scijava</releaseProfiles>
+		
+		<snt.version>75b8de4</snt.version>
+	</properties>
+
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+		<repository>
+			<id>scijava.public</id>
+			<url>https://maven.scijava.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+    <dependencies>
+		<dependency>
+			<groupId>org.morphonets</groupId>
+			<artifactId>SNT</artifactId>
+			<version>${snt.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.vlsi.mxgraph</groupId>
+			<artifactId>jgraphx</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		<!-- SciJava dependencies -->
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>scijava-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>scijava-ui-swing</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>ui-behaviour</artifactId>
+		</dependency>
+
+		<!-- ImageJ dependencies -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+		</dependency>
+	</dependencies>
+</project>
