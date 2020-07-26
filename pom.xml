@@ -110,11 +110,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.morphonets</groupId>
-			<artifactId>SNT</artifactId>
-			<version>${snt.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>com.github.vlsi.mxgraph</groupId>
 			<artifactId>jgraphx</artifactId>
 		</dependency>
@@ -129,29 +124,6 @@
 		<dependency>
 			<groupId>org.jgrapht</groupId>
 			<artifactId>jgrapht-core</artifactId>
-		</dependency>
-		<!-- SciJava dependencies -->
-		<dependency>
-			<groupId>org.scijava</groupId>
-			<artifactId>scijava-common</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.scijava</groupId>
-			<artifactId>scijava-ui-swing</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.scijava</groupId>
-			<artifactId>ui-behaviour</artifactId>
-		</dependency>
-
-		<!-- ImageJ dependencies -->
-		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>imagej-common</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>imagej</artifactId>
 		</dependency>
 	</dependencies>
 </project>
