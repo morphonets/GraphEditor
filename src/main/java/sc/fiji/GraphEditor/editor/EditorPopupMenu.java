@@ -21,30 +21,30 @@ public class EditorPopupMenu extends JPopupMenu
 				.isSelectionEmpty();
 
 		add(editor.bind(mxResources.get("undo"), new EditorActions.HistoryAction(true),
-				"/images/undo.gif"));
+                "/mx_shape_images/undo.gif"));
 
 		addSeparator();
 
 		add(
 				editor.bind(mxResources.get("cut"), TransferHandler
 						.getCutAction(),
-						"/images/cut.gif"))
+                        "/mx_shape_images/cut.gif"))
 				.setEnabled(selected);
 		add(
 				editor.bind(mxResources.get("copy"), TransferHandler
 						.getCopyAction(),
-						"/images/copy.gif"))
+                        "/mx_shape_images/copy.gif"))
 				.setEnabled(selected);
 		add(editor.bind(mxResources.get("paste"), TransferHandler
 				.getPasteAction(),
-				"/images/paste.gif"));
+                "/mx_shape_images/paste.gif"));
 
 		addSeparator();
 
 		add(
 				editor.bind(mxResources.get("delete"), mxGraphActions
 						.getDeleteAction(),
-						"/images/delete.gif"))
+                        "/mx_shape_images/delete.gif"))
 				.setEnabled(selected);
 
 		addSeparator();

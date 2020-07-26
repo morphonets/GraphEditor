@@ -44,37 +44,37 @@ public class SchemaEditorToolBar extends JToolBar
 		setFloatable(false);
 
 		add(editor.bind("New", new EditorActions.NewAction(),
-				"/images/new.gif"));
+                "/mx_shape_images/new.gif"));
 		add(editor.bind("Open", new EditorActions.OpenAction(),
-				"/images/open.gif"));
+                "/mx_shape_images/open.gif"));
 		add(editor.bind("Save", new EditorActions.SaveAction(false),
-				"/images/save.gif"));
+                "/mx_shape_images/save.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Print", new EditorActions.PrintAction(),
-				"/images/print.gif"));
+                "/mx_shape_images/print.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Cut", TransferHandler.getCutAction(),
-				"/images/cut.gif"));
+                "/mx_shape_images/cut.gif"));
 		add(editor.bind("Copy", TransferHandler.getCopyAction(),
-				"/images/copy.gif"));
+                "/mx_shape_images/copy.gif"));
 		add(editor.bind("Paste", TransferHandler.getPasteAction(),
-				"/images/paste.gif"));
+                "/mx_shape_images/paste.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Delete", mxGraphActions.getDeleteAction(),
-				"/images/delete.gif"));
+                "/mx_shape_images/delete.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Undo", new EditorActions.HistoryAction(true),
-				"/images/undo.gif"));
+                "/mx_shape_images/undo.gif"));
 		add(editor.bind("Redo", new EditorActions.HistoryAction(false),
-				"/images/redo.gif"));
+                "/mx_shape_images/redo.gif"));
 
 		addSeparator();
 

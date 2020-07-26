@@ -37,24 +37,24 @@ public class SchemaEditorMenuBar extends JMenuBar
 		menu = add(new JMenu(mxResources.get("file")));
 
 		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(),
-				"/images/new.gif"));
+                "/mx_shape_images/new.gif"));
 		menu.add(editor.bind(mxResources.get("openFile"), new EditorActions.OpenAction(),
-				"/images/open.gif"));
+                "/mx_shape_images/open.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("save"), new EditorActions.SaveAction(false),
-				"/images/save.gif"));
+                "/mx_shape_images/save.gif"));
 		menu.add(editor.bind(mxResources.get("saveAs"), new EditorActions.SaveAction(true),
-				"/images/saveas.gif"));
+                "/mx_shape_images/saveas.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("pageSetup"),
 				new EditorActions.PageSetupAction(),
-				"/images/pagesetup.gif"));
+                "/mx_shape_images/pagesetup.gif"));
 		menu.add(editor.bind(mxResources.get("print"), new EditorActions.PrintAction(),
-				"/images/print.gif"));
+                "/mx_shape_images/print.gif"));
 
 		menu.addSeparator();
 
@@ -64,26 +64,26 @@ public class SchemaEditorMenuBar extends JMenuBar
 		menu = add(new JMenu(mxResources.get("edit")));
 
 		menu.add(editor.bind(mxResources.get("undo"), new EditorActions.HistoryAction(true),
-				"/images/undo.gif"));
+                "/mx_shape_images/undo.gif"));
 		menu.add(editor.bind(mxResources.get("redo"), new EditorActions.HistoryAction(false),
-				"/images/redo.gif"));
+                "/mx_shape_images/redo.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("cut"), TransferHandler
-				.getCutAction(), "/images/cut.gif"));
+				.getCutAction(), "/mx_shape_images/cut.gif"));
 		menu.add(editor
 				.bind(mxResources.get("copy"), TransferHandler.getCopyAction(),
-						"/images/copy.gif"));
+                        "/mx_shape_images/copy.gif"));
 		menu.add(editor.bind(mxResources.get("paste"), TransferHandler
 				.getPasteAction(),
-				"/images/paste.gif"));
+                "/mx_shape_images/paste.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("delete"), mxGraphActions
 				.getDeleteAction(),
-				"/images/delete.gif"));
+                "/mx_shape_images/delete.gif"));
 
 		menu.addSeparator();
 

@@ -97,7 +97,7 @@ public class DefaultFileFilter extends FileFilter
 	{
 
 		/**
-		 * Holds the accepted file format extensions for images.
+		 * Holds the accepted file format extensions for mx_shape_images.
 		 */
 		protected static String[] imageFormats = ImageIO.getReaderFormatNames();
 

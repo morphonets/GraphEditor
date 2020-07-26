@@ -68,7 +68,7 @@ public class SchemaEditor extends BasicGraphEditor
 						"Table",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/images/rectangle.png")),
+										.getResource("/mx_shape_images/rectangle.png")),
 						tableTemplate);
 
 		getGraphComponent().getGraph().setCellsResizable(false);

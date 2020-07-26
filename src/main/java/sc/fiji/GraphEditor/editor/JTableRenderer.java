@@ -67,7 +67,7 @@ public class JTableRenderer extends JComponent
 	/**
 	 * 
 	 */
-	public static final String IMAGE_PATH = "/images/";
+	public static final String IMAGE_PATH = "/mx_shape_images/";
 
 	/**
 	 * 

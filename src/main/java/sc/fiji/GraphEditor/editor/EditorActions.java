@@ -2251,4 +2251,26 @@ public class EditorActions
 			}
 		}
 	}
+
+	/**
+	 *
+	 */
+	public static class ChangeVertexShapeAction extends AbstractAction
+	{
+		/**
+		 *
+		 */
+		public void actionPerformed(ActionEvent e)
+		{
+			if (e.getSource() instanceof mxGraphComponent)
+			{
+				mxGraphComponent graphComponent = (mxGraphComponent) e
+						.getSource();
+				mxGraph graph = graphComponent.getGraph();
+				String filepath = EditorActions.class.getResource("/mx_shape_images/").getPath();
+				System.out.println(filepath);
+			}
+		}
+	}
+
 }
