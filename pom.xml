@@ -108,7 +108,7 @@
 		</repository>
 	</repositories>
 
-    <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.morphonets</groupId>
 			<artifactId>SNT</artifactId>
@@ -117,7 +117,18 @@
 		<dependency>
 			<groupId>com.github.vlsi.mxgraph</groupId>
 			<artifactId>jgraphx</artifactId>
-			<version>4.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jgrapht</groupId>
+			<artifactId>jgrapht-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jgrapht</groupId>
+			<artifactId>jgrapht-ext</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jgrapht</groupId>
+			<artifactId>jgrapht-core</artifactId>
 		</dependency>
 		<!-- SciJava dependencies -->
 		<dependency>
