@@ -55,19 +55,19 @@ public class EditorMenuBar extends JMenuBar
 		// Creates the file menu
 		menu = add(new JMenu(mxResources.get("file")));
 
-		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(), "/sc/fiji/GraphEditor/images/new.gif"));
-		menu.add(editor.bind(mxResources.get("openFile"), new EditorActions.OpenAction(), "/sc/fiji/GraphEditor/images/open.gif"));
-		menu.add(editor.bind(mxResources.get("importStencil"), new EditorActions.ImportAction(), "/sc/fiji/GraphEditor/images/open.gif"));
+		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(), "/images/new.gif"));
+		menu.add(editor.bind(mxResources.get("openFile"), new EditorActions.OpenAction(), "/images/open.gif"));
+		menu.add(editor.bind(mxResources.get("importStencil"), new EditorActions.ImportAction(), "/images/open.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("save"), new EditorActions.SaveAction(false), "/sc/fiji/GraphEditor/images/save.gif"));
-		menu.add(editor.bind(mxResources.get("saveAs"), new EditorActions.SaveAction(true), "/sc/fiji/GraphEditor/images/saveas.gif"));
+		menu.add(editor.bind(mxResources.get("save"), new EditorActions.SaveAction(false), "/images/save.gif"));
+		menu.add(editor.bind(mxResources.get("saveAs"), new EditorActions.SaveAction(true), "/images/saveas.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("pageSetup"), new EditorActions.PageSetupAction(), "/sc/fiji/GraphEditor/images/pagesetup.gif"));
-		menu.add(editor.bind(mxResources.get("print"), new EditorActions.PrintAction(), "/sc/fiji/GraphEditor/images/print.gif"));
+		menu.add(editor.bind(mxResources.get("pageSetup"), new EditorActions.PageSetupAction(), "/images/pagesetup.gif"));
+		menu.add(editor.bind(mxResources.get("print"), new EditorActions.PrintAction(), "/images/print.gif"));
 
 		menu.addSeparator();
 
@@ -76,18 +76,18 @@ public class EditorMenuBar extends JMenuBar
 		// Creates the edit menu
 		menu = add(new JMenu(mxResources.get("edit")));
 
-		menu.add(editor.bind(mxResources.get("undo"), new EditorActions.HistoryAction(true), "/sc/fiji/GraphEditor/images/undo.gif"));
-		menu.add(editor.bind(mxResources.get("redo"), new EditorActions.HistoryAction(false), "/sc/fiji/GraphEditor/images/redo.gif"));
+		menu.add(editor.bind(mxResources.get("undo"), new EditorActions.HistoryAction(true), "/images/undo.gif"));
+		menu.add(editor.bind(mxResources.get("redo"), new EditorActions.HistoryAction(false), "/images/redo.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("cut"), TransferHandler.getCutAction(), "/sc/fiji/GraphEditor/images/cut.gif"));
-		menu.add(editor.bind(mxResources.get("copy"), TransferHandler.getCopyAction(), "/sc/fiji/GraphEditor/images/copy.gif"));
-		menu.add(editor.bind(mxResources.get("paste"), TransferHandler.getPasteAction(), "/sc/fiji/GraphEditor/images/paste.gif"));
+		menu.add(editor.bind(mxResources.get("cut"), TransferHandler.getCutAction(), "/images/cut.gif"));
+		menu.add(editor.bind(mxResources.get("copy"), TransferHandler.getCopyAction(), "/images/copy.gif"));
+		menu.add(editor.bind(mxResources.get("paste"), TransferHandler.getPasteAction(), "/images/paste.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("delete"), mxGraphActions.getDeleteAction(), "/sc/fiji/GraphEditor/images/delete.gif"));
+		menu.add(editor.bind(mxResources.get("delete"), mxGraphActions.getDeleteAction(), "/images/delete.gif"));
 
 		menu.addSeparator();
 
@@ -285,9 +285,9 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("stylesheet")));
 
 		submenu.add(editor.bind(mxResources.get("basicStyle"),
-				new EditorActions.StylesheetAction("/sc/fiji/GraphEditor/resources/basic-style.xml")));
+				new EditorActions.StylesheetAction("basic-style.xml")));
 		submenu.add(editor.bind(mxResources.get("defaultStyle"), new EditorActions.StylesheetAction(
-				"/sc/fiji/GraphEditor/resources/default-style.xml")));
+				"default-style.xml")));
 
 		// Creates the options menu
 		menu = add(new JMenu(mxResources.get("options")));
@@ -486,19 +486,19 @@ public class EditorMenuBar extends JMenuBar
 	 */
 	public static void populateShapeMenu(JMenu menu, BasicGraphEditor editor)
 	{
-		menu.add(editor.bind(mxResources.get("home"), mxGraphActions.getHomeAction(), "/sc/fiji/GraphEditor/images/house.gif"));
+		menu.add(editor.bind(mxResources.get("home"), mxGraphActions.getHomeAction(), "/images/house.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("exitGroup"), mxGraphActions.getExitGroupAction(), "/sc/fiji/GraphEditor/images/up.gif"));
+		menu.add(editor.bind(mxResources.get("exitGroup"), mxGraphActions.getExitGroupAction(), "/images/up.gif"));
 		menu.add(editor.bind(mxResources.get("enterGroup"), mxGraphActions.getEnterGroupAction(),
-				"/sc/fiji/GraphEditor/images/down.gif"));
+				"/images/down.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("group"), mxGraphActions.getGroupAction(), "/sc/fiji/GraphEditor/images/group.gif"));
+		menu.add(editor.bind(mxResources.get("group"), mxGraphActions.getGroupAction(), "/images/group.gif"));
 		menu.add(editor.bind(mxResources.get("ungroup"), mxGraphActions.getUngroupAction(),
-				"/sc/fiji/GraphEditor/images/ungroup.gif"));
+				"/images/ungroup.gif"));
 
 		menu.addSeparator();
 
@@ -509,34 +509,34 @@ public class EditorMenuBar extends JMenuBar
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("collapse"), mxGraphActions.getCollapseAction(),
-				"/sc/fiji/GraphEditor/images/collapse.gif"));
-		menu.add(editor.bind(mxResources.get("expand"), mxGraphActions.getExpandAction(), "/sc/fiji/GraphEditor/images/expand.gif"));
+				"/images/collapse.gif"));
+		menu.add(editor.bind(mxResources.get("expand"), mxGraphActions.getExpandAction(), "/images/expand.gif"));
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("toBack"), mxGraphActions.getToBackAction(), "/sc/fiji/GraphEditor/images/toback.gif"));
+		menu.add(editor.bind(mxResources.get("toBack"), mxGraphActions.getToBackAction(), "/images/toback.gif"));
 		menu.add(editor.bind(mxResources.get("toFront"), mxGraphActions.getToFrontAction(),
-				"/sc/fiji/GraphEditor/images/tofront.gif"));
+				"/images/tofront.gif"));
 
 		menu.addSeparator();
 
 		JMenu submenu = (JMenu) menu.add(new JMenu(mxResources.get("align")));
 
 		submenu.add(editor.bind(mxResources.get("left"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_LEFT),
-				"/sc/fiji/GraphEditor/images/alignleft.gif"));
+				"/images/alignleft.gif"));
 		submenu.add(editor.bind(mxResources.get("center"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_CENTER),
-				"/sc/fiji/GraphEditor/images/aligncenter.gif"));
+				"/images/aligncenter.gif"));
 		submenu.add(editor.bind(mxResources.get("right"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_RIGHT),
-				"/sc/fiji/GraphEditor/images/alignright.gif"));
+				"/images/alignright.gif"));
 
 		submenu.addSeparator();
 
 		submenu.add(editor.bind(mxResources.get("top"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_TOP),
-				"/sc/fiji/GraphEditor/images/aligntop.gif"));
+				"/images/aligntop.gif"));
 		submenu.add(editor.bind(mxResources.get("middle"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_MIDDLE),
-				"/sc/fiji/GraphEditor/images/alignmiddle.gif"));
+				"/images/alignmiddle.gif"));
 		submenu.add(editor.bind(mxResources.get("bottom"), new EditorActions.AlignCellsAction(mxConstants.ALIGN_BOTTOM),
-				"/sc/fiji/GraphEditor/images/alignbottom.gif"));
+				"/images/alignbottom.gif"));
 
 		menu.addSeparator();
 
@@ -553,7 +553,7 @@ public class EditorMenuBar extends JMenuBar
 		JMenu submenu = (JMenu) menu.add(new JMenu(mxResources.get("background")));
 
 		submenu.add(editor.bind(mxResources.get("fillcolor"), new EditorActions.ColorAction("Fillcolor", mxConstants.STYLE_FILLCOLOR),
-				"/sc/fiji/GraphEditor/images/fillcolor.gif"));
+				"/images/fillcolor.gif"));
 		submenu.add(editor.bind(mxResources.get("gradient"), new EditorActions.ColorAction("Gradient", mxConstants.STYLE_GRADIENTCOLOR)));
 
 		submenu.addSeparator();
@@ -568,7 +568,7 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("label")));
 
 		submenu.add(editor.bind(mxResources.get("fontcolor"), new EditorActions.ColorAction("Fontcolor", mxConstants.STYLE_FONTCOLOR),
-				"/sc/fiji/GraphEditor/images/fontcolor.gif"));
+				"/images/fontcolor.gif"));
 
 		submenu.addSeparator();
 
@@ -611,7 +611,7 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("line")));
 
 		submenu.add(editor.bind(mxResources.get("linecolor"), new EditorActions.ColorAction("Linecolor", mxConstants.STYLE_STROKECOLOR),
-				"/sc/fiji/GraphEditor/images/linecolor.gif"));
+				"/images/linecolor.gif"));
 
 		submenu.addSeparator();
 
@@ -625,17 +625,17 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("connector")));
 
 		submenu.add(editor.bind(mxResources.get("straight"), new EditorActions.SetStyleAction("straight"),
-				"/sc/fiji/GraphEditor/images/straight.gif"));
+				"/images/straight.gif"));
 
-		submenu.add(editor.bind(mxResources.get("horizontal"), new EditorActions.SetStyleAction(""), "/sc/fiji/GraphEditor/images/connect.gif"));
+		submenu.add(editor.bind(mxResources.get("horizontal"), new EditorActions.SetStyleAction(""), "/images/connect.gif"));
 		submenu.add(editor.bind(mxResources.get("vertical"), new EditorActions.SetStyleAction("vertical"),
-				"/sc/fiji/GraphEditor/images/vertical.gif"));
+				"/images/vertical.gif"));
 
 		submenu.addSeparator();
 
 		submenu.add(editor.bind(mxResources.get("entityRelation"), new EditorActions.SetStyleAction("edgeStyle=mxEdgeStyle.EntityRelation"),
-				"/sc/fiji/GraphEditor/images/entity.gif"));
-		submenu.add(editor.bind(mxResources.get("arrow"), new EditorActions.SetStyleAction("arrow"), "/sc/fiji/GraphEditor/images/arrow.gif"));
+				"/images/entity.gif"));
+		submenu.add(editor.bind(mxResources.get("arrow"), new EditorActions.SetStyleAction("arrow"), "/images/arrow.gif"));
 
 		submenu.addSeparator();
 
@@ -646,18 +646,18 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("linestart")));
 
 		submenu.add(editor.bind(mxResources.get("open"), new EditorActions.KeyValueAction(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_OPEN),
-				"/sc/fiji/GraphEditor/images/open_start.gif"));
+				"/images/open_start.gif"));
 		submenu.add(editor.bind(mxResources.get("classic"), new EditorActions.KeyValueAction(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_CLASSIC),
-				"/sc/fiji/GraphEditor/images/classic_start.gif"));
+				"/images/classic_start.gif"));
 		submenu.add(editor.bind(mxResources.get("block"), new EditorActions.KeyValueAction(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_BLOCK),
-				"/sc/fiji/GraphEditor/images/block_start.gif"));
+				"/images/block_start.gif"));
 
 		submenu.addSeparator();
 
 		submenu.add(editor.bind(mxResources.get("diamond"), new EditorActions.KeyValueAction(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_DIAMOND),
-				"/sc/fiji/GraphEditor/images/diamond_start.gif"));
+				"/images/diamond_start.gif"));
 		submenu.add(editor.bind(mxResources.get("oval"), new EditorActions.KeyValueAction(mxConstants.STYLE_STARTARROW, mxConstants.ARROW_OVAL),
-				"/sc/fiji/GraphEditor/images/oval_start.gif"));
+				"/images/oval_start.gif"));
 
 		submenu.addSeparator();
 
@@ -667,18 +667,18 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("lineend")));
 
 		submenu.add(editor.bind(mxResources.get("open"), new EditorActions.KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OPEN),
-				"/sc/fiji/GraphEditor/images/open_end.gif"));
+				"/images/open_end.gif"));
 		submenu.add(editor.bind(mxResources.get("classic"), new EditorActions.KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_CLASSIC),
-				"/sc/fiji/GraphEditor/images/classic_end.gif"));
+				"/images/classic_end.gif"));
 		submenu.add(editor.bind(mxResources.get("block"), new EditorActions.KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_BLOCK),
-				"/sc/fiji/GraphEditor/images/block_end.gif"));
+				"/images/block_end.gif"));
 
 		submenu.addSeparator();
 
 		submenu.add(editor.bind(mxResources.get("diamond"), new EditorActions.KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_DIAMOND),
-				"/sc/fiji/GraphEditor/images/diamond_end.gif"));
+				"/images/diamond_end.gif"));
 		submenu.add(editor.bind(mxResources.get("oval"), new EditorActions.KeyValueAction(mxConstants.STYLE_ENDARROW, mxConstants.ARROW_OVAL),
-				"/sc/fiji/GraphEditor/images/oval_end.gif"));
+				"/images/oval_end.gif"));
 
 		submenu.addSeparator();
 
@@ -690,20 +690,20 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("alignment")));
 
 		submenu.add(editor.bind(mxResources.get("left"), new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_LEFT),
-				"/sc/fiji/GraphEditor/images/left.gif"));
+				"/images/left.gif"));
 		submenu.add(editor.bind(mxResources.get("center"), new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_CENTER),
-				"/sc/fiji/GraphEditor/images/center.gif"));
+				"/images/center.gif"));
 		submenu.add(editor.bind(mxResources.get("right"), new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN, mxConstants.ALIGN_RIGHT),
-				"/sc/fiji/GraphEditor/images/right.gif"));
+				"/images/right.gif"));
 
 		submenu.addSeparator();
 
 		submenu.add(editor.bind(mxResources.get("top"), new EditorActions.KeyValueAction(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_TOP),
-				"/sc/fiji/GraphEditor/images/top.gif"));
+				"/images/top.gif"));
 		submenu.add(editor.bind(mxResources.get("middle"), new EditorActions.KeyValueAction(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_MIDDLE),
-				"/sc/fiji/GraphEditor/images/middle.gif"));
+				"/images/middle.gif"));
 		submenu.add(editor.bind(mxResources.get("bottom"), new EditorActions.KeyValueAction(mxConstants.STYLE_VERTICAL_ALIGN, mxConstants.ALIGN_BOTTOM),
-				"/sc/fiji/GraphEditor/images/bottom.gif"));
+				"/images/bottom.gif"));
 
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("spacing")));
 

@@ -33,7 +33,7 @@ public class Stencils extends JFrame
 		try
 		{
 			String filename = Stencils.class.getResource(
-					"/sc/fiji/GraphEditor/shapes.xml").getPath();
+					"shapes.xml").getPath();
 			Document doc = mxXmlUtils.parseXml(mxUtils.readFile(filename));
 
 			Element shapes = (Element) doc.getDocumentElement();

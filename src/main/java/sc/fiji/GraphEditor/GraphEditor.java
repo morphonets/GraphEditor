@@ -56,7 +56,7 @@ public class GraphEditor extends BasicGraphEditor
 	 */
 	public static URL url = null;
 
-	//GraphEditor.class.getResource("/sc/fiji/GraphEditor/images/connector.gif");
+	//GraphEditor.class.getResource("/images/connector.gif");
 
 	public GraphEditor()
 	{
@@ -104,14 +104,14 @@ public class GraphEditor extends BasicGraphEditor
 						"Container",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/swimlane.png")),
+										.getResource("/images/swimlane.png")),
 						"swimlane", 280, 280, "Container");
 		shapesPalette
 				.addTemplate(
 						"Icon",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rounded.png")),
+										.getResource("/images/rounded.png")),
 						"icon;image=/sc/fiji/GraphEditor/images/wrench.png",
 						70, 70, "Icon");
 		shapesPalette
@@ -119,7 +119,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Label",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rounded.png")),
+										.getResource("/images/rounded.png")),
 						"label;image=/sc/fiji/GraphEditor/images/gear.png",
 						130, 50, "Label");
 		shapesPalette
@@ -127,84 +127,84 @@ public class GraphEditor extends BasicGraphEditor
 						"Rectangle",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rectangle.png")),
+										.getResource("/images/rectangle.png")),
 						null, 160, 120, "");
 		shapesPalette
 				.addTemplate(
 						"Rounded Rectangle",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rounded.png")),
+										.getResource("/images/rounded.png")),
 						"rounded=1", 160, 120, "");
 		shapesPalette
 				.addTemplate(
 						"Double Rectangle",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/doublerectangle.png")),
+										.getResource("/images/doublerectangle.png")),
 						"rectangle;shape=doubleRectangle", 160, 120, "");
 		shapesPalette
 				.addTemplate(
 						"Ellipse",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/ellipse.png")),
+										.getResource("/images/ellipse.png")),
 						"ellipse", 160, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Double Ellipse",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/doubleellipse.png")),
+										.getResource("/images/doubleellipse.png")),
 						"ellipse;shape=doubleEllipse", 160, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Triangle",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/triangle.png")),
+										.getResource("/images/triangle.png")),
 						"triangle", 120, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Rhombus",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rhombus.png")),
+										.getResource("/images/rhombus.png")),
 						"rhombus", 160, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Horizontal Line",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/hline.png")),
+										.getResource("/images/hline.png")),
 						"line", 160, 10, "");
 		shapesPalette
 				.addTemplate(
 						"Hexagon",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/hexagon.png")),
+										.getResource("/images/hexagon.png")),
 						"shape=hexagon", 160, 120, "");
 		shapesPalette
 				.addTemplate(
 						"Cylinder",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/cylinder.png")),
+										.getResource("/images/cylinder.png")),
 						"shape=cylinder", 120, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Actor",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/actor.png")),
+										.getResource("/images/actor.png")),
 						"shape=actor", 120, 160, "");
 		shapesPalette
 				.addTemplate(
 						"Cloud",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/cloud.png")),
+										.getResource("/images/cloud.png")),
 						"ellipse;shape=cloud", 160, 120, "");
 
 		shapesPalette
@@ -212,35 +212,35 @@ public class GraphEditor extends BasicGraphEditor
 						"Straight",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/straight.png")),
+										.getResource("/images/straight.png")),
 						"straight", 120, 120, "");
 		shapesPalette
 				.addEdgeTemplate(
 						"Horizontal Connector",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/connect.png")),
+										.getResource("/images/connect.png")),
 						null, 100, 100, "");
 		shapesPalette
 				.addEdgeTemplate(
 						"Vertical Connector",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/vertical.png")),
+										.getResource("/images/vertical.png")),
 						"vertical", 100, 100, "");
 		shapesPalette
 				.addEdgeTemplate(
 						"Entity Relation",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/entity.png")),
+										.getResource("/images/entity.png")),
 						"entity", 100, 100, "");
 		shapesPalette
 				.addEdgeTemplate(
 						"Arrow",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/arrow.png")),
+										.getResource("/images/arrow.png")),
 						"arrow", 120, 120, "");
 
 		imagesPalette
@@ -248,7 +248,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Bell",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/bell.png")),
+										.getResource("/images/bell.png")),
 						"image;image=/sc/fiji/GraphEditor/images/bell.png",
 						50, 50, "Bell");
 		imagesPalette
@@ -256,7 +256,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Box",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/box.png")),
+										.getResource("/images/box.png")),
 						"image;image=/sc/fiji/GraphEditor/images/box.png",
 						50, 50, "Box");
 		imagesPalette
@@ -264,7 +264,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Cube",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/cube_green.png")),
+										.getResource("/images/cube_green.png")),
 						"image;image=/sc/fiji/GraphEditor/images/cube_green.png",
 						50, 50, "Cube");
 		imagesPalette
@@ -272,7 +272,7 @@ public class GraphEditor extends BasicGraphEditor
 						"User",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/dude3.png")),
+										.getResource("/images/dude3.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/dude3.png",
 						50, 50, "User");
 		imagesPalette
@@ -280,7 +280,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Earth",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/earth.png")),
+										.getResource("/images/earth.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/earth.png",
 						50, 50, "Earth");
 		imagesPalette
@@ -288,7 +288,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Gear",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/gear.png")),
+										.getResource("/images/gear.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/gear.png",
 						50, 50, "Gear");
 		imagesPalette
@@ -296,7 +296,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Home",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/house.png")),
+										.getResource("/images/house.png")),
 						"image;image=/sc/fiji/GraphEditor/images/house.png",
 						50, 50, "Home");
 		imagesPalette
@@ -304,7 +304,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Package",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/package.png")),
+										.getResource("/images/package.png")),
 						"image;image=/sc/fiji/GraphEditor/images/package.png",
 						50, 50, "Package");
 		imagesPalette
@@ -312,7 +312,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Printer",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/printer.png")),
+										.getResource("/images/printer.png")),
 						"image;image=/sc/fiji/GraphEditor/images/printer.png",
 						50, 50, "Printer");
 		imagesPalette
@@ -320,7 +320,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Server",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/server.png")),
+										.getResource("/images/server.png")),
 						"image;image=/sc/fiji/GraphEditor/images/server.png",
 						50, 50, "Server");
 		imagesPalette
@@ -328,7 +328,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Workplace",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/workplace.png")),
+										.getResource("/images/workplace.png")),
 						"image;image=/sc/fiji/GraphEditor/images/workplace.png",
 						50, 50, "Workplace");
 		imagesPalette
@@ -336,7 +336,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Wrench",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/wrench.png")),
+										.getResource("/images/wrench.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/wrench.png",
 						50, 50, "Wrench");
 
@@ -345,7 +345,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Cancel",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/cancel_end.png")),
+										.getResource("/images/cancel_end.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/cancel_end.png",
 						80, 80, "Cancel");
 		symbolsPalette
@@ -353,7 +353,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Error",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/error.png")),
+										.getResource("/images/error.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/error.png",
 						80, 80, "Error");
 		symbolsPalette
@@ -361,7 +361,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Event",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/event.png")),
+										.getResource("/images/event.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/event.png",
 						80, 80, "Event");
 		symbolsPalette
@@ -369,7 +369,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Fork",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/fork.png")),
+										.getResource("/images/fork.png")),
 						"rhombusImage;image=/sc/fiji/GraphEditor/images/fork.png",
 						80, 80, "Fork");
 		symbolsPalette
@@ -377,7 +377,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Inclusive",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/inclusive.png")),
+										.getResource("/images/inclusive.png")),
 						"rhombusImage;image=/sc/fiji/GraphEditor/images/inclusive.png",
 						80, 80, "Inclusive");
 		symbolsPalette
@@ -385,7 +385,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Link",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/link.png")),
+										.getResource("/images/link.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/link.png",
 						80, 80, "Link");
 		symbolsPalette
@@ -393,7 +393,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Merge",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/merge.png")),
+										.getResource("/images/merge.png")),
 						"rhombusImage;image=/sc/fiji/GraphEditor/images/merge.png",
 						80, 80, "Merge");
 		symbolsPalette
@@ -401,7 +401,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Message",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/message.png")),
+										.getResource("/images/message.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/message.png",
 						80, 80, "Message");
 		symbolsPalette
@@ -409,7 +409,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Multiple",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/multiple.png")),
+										.getResource("/images/multiple.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/multiple.png",
 						80, 80, "Multiple");
 		symbolsPalette
@@ -417,7 +417,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Rule",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/rule.png")),
+										.getResource("/images/rule.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/rule.png",
 						80, 80, "Rule");
 		symbolsPalette
@@ -425,7 +425,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Terminate",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/terminate.png")),
+										.getResource("/images/terminate.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/terminate.png",
 						80, 80, "Terminate");
 		symbolsPalette
@@ -433,7 +433,7 @@ public class GraphEditor extends BasicGraphEditor
 						"Timer",
 						new ImageIcon(
 								GraphEditor.class
-										.getResource("/sc/fiji/GraphEditor/images/timer.png")),
+										.getResource("/images/timer.png")),
 						"roundImage;image=/sc/fiji/GraphEditor/images/timer.png",
 						80, 80, "Timer");
 	}
@@ -466,7 +466,7 @@ public class GraphEditor extends BasicGraphEditor
 			// Loads the defalt stylesheet from an external file
 			mxCodec codec = new mxCodec();
 			Document doc = mxUtils.loadDocument(GraphEditor.class.getResource(
-					"/sc/fiji/GraphEditor/resources/default-style.xml")
+					"/default-style.xml")
 					.toString());
 			codec.decode(doc.getDocumentElement(), graph.getStylesheet());
 
@@ -673,6 +673,11 @@ public class GraphEditor extends BasicGraphEditor
 		mxConstants.W3C_SHADOWCOLOR = "#D3D3D3";
 
 		GraphEditor editor = new GraphEditor();
-		editor.createFrame(new EditorMenuBar(editor)).setVisible(true);
+		JFrame frame = editor.createFrame(new EditorMenuBar(editor));
+		frame.setSize(500, 500);
+		frame.pack();
+		editor.setVisible(true);
+		frame.add(new JLabel("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+		frame.setVisible(true);
 	}
 }

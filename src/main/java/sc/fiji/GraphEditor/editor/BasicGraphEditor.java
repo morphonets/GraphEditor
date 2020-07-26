@@ -71,11 +71,11 @@ public class BasicGraphEditor extends JPanel
 	{
 		try
 		{
-			mxResources.add("com/mxgraph/examples/swing/resources/editor");
+			mxResources.add("editor");
 		}
 		catch (Exception e)
 		{
-			// ignore
+			e.printStackTrace(); // ignore
 		}
 	}
 

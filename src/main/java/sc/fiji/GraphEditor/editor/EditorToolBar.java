@@ -50,37 +50,37 @@ public class EditorToolBar extends JToolBar
 		setFloatable(false);
 
 		add(editor.bind("New", new EditorActions.NewAction(),
-				"/sc/fiji/GraphEditor/images/new.gif"));
+				"/images/new.gif"));
 		add(editor.bind("Open", new EditorActions.OpenAction(),
-				"/sc/fiji/GraphEditor/images/open.gif"));
+				"/images/open.gif"));
 		add(editor.bind("Save", new EditorActions.SaveAction(false),
-				"/sc/fiji/GraphEditor/images/save.gif"));
+				"/images/save.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Print", new EditorActions.PrintAction(),
-				"/sc/fiji/GraphEditor/images/print.gif"));
+				"/images/print.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Cut", TransferHandler.getCutAction(),
-				"/sc/fiji/GraphEditor/images/cut.gif"));
+				"/images/cut.gif"));
 		add(editor.bind("Copy", TransferHandler.getCopyAction(),
-				"/sc/fiji/GraphEditor/images/copy.gif"));
+				"/images/copy.gif"));
 		add(editor.bind("Paste", TransferHandler.getPasteAction(),
-				"/sc/fiji/GraphEditor/images/paste.gif"));
+				"/images/paste.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Delete", mxGraphActions.getDeleteAction(),
-				"/sc/fiji/GraphEditor/images/delete.gif"));
+				"/images/delete.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Undo", new EditorActions.HistoryAction(true),
-				"/sc/fiji/GraphEditor/images/undo.gif"));
+				"/images/undo.gif"));
 		add(editor.bind("Redo", new EditorActions.HistoryAction(false),
-				"/sc/fiji/GraphEditor/images/redo.gif"));
+				"/images/redo.gif"));
 
 		addSeparator();
 
@@ -142,33 +142,33 @@ public class EditorToolBar extends JToolBar
 		addSeparator();
 
 		add(editor.bind("Bold", new EditorActions.FontStyleAction(true),
-				"/sc/fiji/GraphEditor/images/bold.gif"));
+				"/images/bold.gif"));
 		add(editor.bind("Italic", new EditorActions.FontStyleAction(false),
-				"/sc/fiji/GraphEditor/images/italic.gif"));
+				"/images/italic.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Left", new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN,
 				mxConstants.ALIGN_LEFT),
-				"/sc/fiji/GraphEditor/images/left.gif"));
+				"/images/left.gif"));
 		add(editor.bind("Center", new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN,
 				mxConstants.ALIGN_CENTER),
-				"/sc/fiji/GraphEditor/images/center.gif"));
+				"/images/center.gif"));
 		add(editor.bind("Right", new EditorActions.KeyValueAction(mxConstants.STYLE_ALIGN,
 				mxConstants.ALIGN_RIGHT),
-				"/sc/fiji/GraphEditor/images/right.gif"));
+				"/images/right.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Font", new EditorActions.ColorAction("Font",
 				mxConstants.STYLE_FONTCOLOR),
-				"/sc/fiji/GraphEditor/images/fontcolor.gif"));
+				"/images/fontcolor.gif"));
 		add(editor.bind("Stroke", new EditorActions.ColorAction("Stroke",
 				mxConstants.STYLE_STROKECOLOR),
-				"/sc/fiji/GraphEditor/images/linecolor.gif"));
+				"/images/linecolor.gif"));
 		add(editor.bind("Fill", new EditorActions.ColorAction("Fill",
 				mxConstants.STYLE_FILLCOLOR),
-				"/sc/fiji/GraphEditor/images/fillcolor.gif"));
+				"/images/fillcolor.gif"));
 
 		addSeparator();
 

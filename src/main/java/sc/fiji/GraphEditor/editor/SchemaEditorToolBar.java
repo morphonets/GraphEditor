@@ -44,37 +44,37 @@ public class SchemaEditorToolBar extends JToolBar
 		setFloatable(false);
 
 		add(editor.bind("New", new EditorActions.NewAction(),
-				"/sc/fiji/GraphEditor/images/new.gif"));
+				"/images/new.gif"));
 		add(editor.bind("Open", new EditorActions.OpenAction(),
-				"/sc/fiji/GraphEditor/images/open.gif"));
+				"/images/open.gif"));
 		add(editor.bind("Save", new EditorActions.SaveAction(false),
-				"/sc/fiji/GraphEditor/images/save.gif"));
+				"/images/save.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Print", new EditorActions.PrintAction(),
-				"/sc/fiji/GraphEditor/images/print.gif"));
+				"/images/print.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Cut", TransferHandler.getCutAction(),
-				"/sc/fiji/GraphEditor/images/cut.gif"));
+				"/images/cut.gif"));
 		add(editor.bind("Copy", TransferHandler.getCopyAction(),
-				"/sc/fiji/GraphEditor/images/copy.gif"));
+				"/images/copy.gif"));
 		add(editor.bind("Paste", TransferHandler.getPasteAction(),
-				"/sc/fiji/GraphEditor/images/paste.gif"));
+				"/images/paste.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Delete", mxGraphActions.getDeleteAction(),
-				"/sc/fiji/GraphEditor/images/delete.gif"));
+				"/images/delete.gif"));
 
 		addSeparator();
 
 		add(editor.bind("Undo", new EditorActions.HistoryAction(true),
-				"/sc/fiji/GraphEditor/images/undo.gif"));
+				"/images/undo.gif"));
 		add(editor.bind("Redo", new EditorActions.HistoryAction(false),
-				"/sc/fiji/GraphEditor/images/redo.gif"));
+				"/images/redo.gif"));
 
 		addSeparator();
 

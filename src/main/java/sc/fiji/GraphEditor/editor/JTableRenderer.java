@@ -67,7 +67,7 @@ public class JTableRenderer extends JComponent
 	/**
 	 * 
 	 */
-	public static final String IMAGE_PATH = "/sc/fiji/GraphEditor/images/";
+	public static final String IMAGE_PATH = "/images/";
 
 	/**
 	 * 

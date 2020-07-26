@@ -37,24 +37,24 @@ public class SchemaEditorMenuBar extends JMenuBar
 		menu = add(new JMenu(mxResources.get("file")));
 
 		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(),
-				"/sc/fiji/GraphEditor/images/new.gif"));
+				"/images/new.gif"));
 		menu.add(editor.bind(mxResources.get("openFile"), new EditorActions.OpenAction(),
-				"/sc/fiji/GraphEditor/images/open.gif"));
+				"/images/open.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("save"), new EditorActions.SaveAction(false),
-				"/sc/fiji/GraphEditor/images/save.gif"));
+				"/images/save.gif"));
 		menu.add(editor.bind(mxResources.get("saveAs"), new EditorActions.SaveAction(true),
-				"/sc/fiji/GraphEditor/images/saveas.gif"));
+				"/images/saveas.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("pageSetup"),
 				new EditorActions.PageSetupAction(),
-				"/sc/fiji/GraphEditor/images/pagesetup.gif"));
+				"/images/pagesetup.gif"));
 		menu.add(editor.bind(mxResources.get("print"), new EditorActions.PrintAction(),
-				"/sc/fiji/GraphEditor/images/print.gif"));
+				"/images/print.gif"));
 
 		menu.addSeparator();
 
@@ -64,26 +64,26 @@ public class SchemaEditorMenuBar extends JMenuBar
 		menu = add(new JMenu(mxResources.get("edit")));
 
 		menu.add(editor.bind(mxResources.get("undo"), new EditorActions.HistoryAction(true),
-				"/sc/fiji/GraphEditor/images/undo.gif"));
+				"/images/undo.gif"));
 		menu.add(editor.bind(mxResources.get("redo"), new EditorActions.HistoryAction(false),
-				"/sc/fiji/GraphEditor/images/redo.gif"));
+				"/images/redo.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("cut"), TransferHandler
-				.getCutAction(), "/sc/fiji/GraphEditor/images/cut.gif"));
+				.getCutAction(), "/images/cut.gif"));
 		menu.add(editor
 				.bind(mxResources.get("copy"), TransferHandler.getCopyAction(),
-						"/sc/fiji/GraphEditor/images/copy.gif"));
+						"/images/copy.gif"));
 		menu.add(editor.bind(mxResources.get("paste"), TransferHandler
 				.getPasteAction(),
-				"/sc/fiji/GraphEditor/images/paste.gif"));
+				"/images/paste.gif"));
 
 		menu.addSeparator();
 
 		menu.add(editor.bind(mxResources.get("delete"), mxGraphActions
 				.getDeleteAction(),
-				"/sc/fiji/GraphEditor/images/delete.gif"));
+				"/images/delete.gif"));
 
 		menu.addSeparator();
 
@@ -297,13 +297,13 @@ public class SchemaEditorMenuBar extends JMenuBar
 						.bind(
 								mxResources.get("basicStyle"),
 								new EditorActions.StylesheetAction(
-										"/sc/fiji/GraphEditor/resources/basic-style.xml")));
+										"basic-style.xml")));
 		submenu
 				.add(editor
 						.bind(
 								mxResources.get("defaultStyle"),
 								new EditorActions.StylesheetAction(
-										"/sc/fiji/GraphEditor/resources/default-style.xml")));
+										"default-style.xml")));
 
 		// Creates the options menu
 		menu = add(new JMenu(mxResources.get("options")));
