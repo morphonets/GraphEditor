@@ -23,20 +23,10 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 import javax.imageio.ImageIO;
-import javax.swing.AbstractAction;
-import javax.swing.ImageIcon;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JColorChooser;
-import javax.swing.JComponent;
-import javax.swing.JEditorPane;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JSplitPane;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.text.html.HTML;
 import javax.swing.text.html.HTMLDocument;
@@ -2257,6 +2247,10 @@ public class EditorActions
 	 */
 	public static class ChangeVertexShapeAction extends AbstractAction
 	{
+		private String[] shapes = {mxConstants.SHAPE_RECTANGLE, mxConstants.SHAPE_DOUBLE_RECTANGLE,
+				mxConstants.SHAPE_ELLIPSE, mxConstants.SHAPE_DOUBLE_ELLIPSE, mxConstants.SHAPE_TRIANGLE,
+				mxConstants.SHAPE_RHOMBUS, mxConstants.SHAPE_HEXAGON, mxConstants.SHAPE_CYLINDER,
+				mxConstants.SHAPE_ACTOR, mxConstants.SHAPE_CLOUD};
 		/**
 		 *
 		 */
@@ -2267,8 +2261,20 @@ public class EditorActions
 				mxGraphComponent graphComponent = (mxGraphComponent) e
 						.getSource();
 				mxGraph graph = graphComponent.getGraph();
-				String filepath = EditorActions.class.getResource("/mx_shape_images/").getPath();
-				System.out.println(filepath);
+				JList choices = new JList(shapes);
+				JOptionPane.showMessageDialog(
+						graphComponent, new JScrollPane(choices), "Choose new shape", JOptionPane.PLAIN_MESSAGE,
+						null);
+				String selectedShape = (String) choices.getSelectedValue();
+				if (selectedShape != null) {
+					graph.getModel().beginUpdate();
+					try {
+						graph.getStylesheet().getDefaultVertexStyle().put(mxConstants.STYLE_SHAPE, selectedShape);
+					} finally {
+						graph.getModel().endUpdate();
+						graph.refresh();
+					}
+				}
 			}
 		}
 	}
