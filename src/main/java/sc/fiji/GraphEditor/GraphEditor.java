@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import org.w3c.dom.Document;
@@ -674,10 +675,10 @@ public class GraphEditor extends BasicGraphEditor
 
 		GraphEditor editor = new GraphEditor();
 		JFrame frame = editor.createFrame(new EditorMenuBar(editor));
-		frame.setSize(500, 500);
-		frame.pack();
-		editor.setVisible(true);
-		frame.add(new JLabel("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
-		frame.setVisible(true);
+		SwingUtilities.invokeLater( () -> {
+			frame.setVisible(true);
+		});
+		
+
 	}
 }
