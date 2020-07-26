@@ -4,7 +4,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.AbstractAction;
 import javax.swing.JMenu;
@@ -21,6 +23,7 @@ import com.mxgraph.analysis.mxGraphProperties;
 import com.mxgraph.analysis.mxGraphStructure;
 import com.mxgraph.analysis.mxTraversal;
 import com.mxgraph.costfunction.mxCostFunction;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.model.mxIGraphModel;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphActions;
@@ -880,6 +883,155 @@ public class EditorMenuBar extends JMenuBar
 			this.aGraph = aGraph;
 		}
 
+		protected void doIsConnected() {
+			boolean isConnected = mxGraphStructure.isConnected(aGraph);
+
+			if (isConnected)
+			{
+				System.out.println("The graph is connected");
+			}
+			else
+			{
+				System.out.println("The graph is not connected");
+			}
+		}
+
+		protected void doIsSimple() {
+			boolean isSimple = mxGraphStructure.isSimple(aGraph);
+
+			if (isSimple)
+			{
+				System.out.println("The graph is simple");
+			}
+			else
+			{
+				System.out.println("The graph is not simple");
+			}
+		}
+
+		protected void doIsCyclicDirected() {
+			boolean isCyclicDirected = mxGraphStructure.isCyclicDirected(aGraph);
+
+			if (isCyclicDirected)
+			{
+				System.out.println("The graph is cyclic directed");
+			}
+			else
+			{
+				System.out.println("The graph is acyclic directed");
+			}
+		}
+
+		protected void doIsCyclicUndirected() {
+			boolean isCyclicUndirected = mxGraphStructure.isCyclicUndirected(aGraph);
+
+			if (isCyclicUndirected)
+			{
+				System.out.println("The graph is cyclic undirected");
+			}
+			else
+			{
+				System.out.println("The graph is acyclic undirected");
+			}
+		}
+
+		protected void doComplementary(mxGraph graph) {
+			graph.getModel().beginUpdate();
+
+			mxGraphStructure.complementaryGraph(aGraph);
+
+			mxGraphStructure.setDefaultGraphStyle(aGraph, true);
+			graph.getModel().endUpdate();
+		}
+
+		protected void doRegularity() {
+			try
+			{
+				int regularity = mxGraphStructure.regularity(aGraph);
+				System.out.println("Graph regularity is: " + regularity);
+			}
+			catch (StructuralException e1)
+			{
+				System.out.println("The graph is irregular");
+			}
+		}
+
+		protected void doComponents() {
+			Object[][] components = mxGraphStructure.getGraphComponents(aGraph);
+			mxIGraphModel model = aGraph.getGraph().getModel();
+
+			for (int i = 0; i < components.length; i++)
+			{
+				System.out.print("Component " + i + " :");
+
+				for (int j = 0; j < components[i].length; j++)
+				{
+					System.out.print(" " + model.getValue(components[i][j]));
+				}
+
+				System.out.println(".");
+			}
+
+			System.out.println("Number of components: " + components.length);
+		}
+
+		protected void doMakeConnected(mxGraph graph) {
+			graph.getModel().beginUpdate();
+
+			if (!mxGraphStructure.isConnected(aGraph))
+			{
+				mxGraphStructure.makeConnected(aGraph);
+				mxGraphStructure.setDefaultGraphStyle(aGraph, false);
+			}
+
+			graph.getModel().endUpdate();
+		}
+
+		protected void doIsDirected() {
+
+			boolean isDirected = mxGraphProperties.isDirected(aGraph.getProperties(), mxGraphProperties.DEFAULT_DIRECTED);
+
+			if (isDirected)
+			{
+				System.out.println("The graph is directed.");
+			}
+			else
+			{
+				System.out.println("The graph is undirected.");
+			}
+		}
+
+		protected void doGetSources() {
+
+			Object[] cells = aGraph.getGraph().getChildVertices(aGraph.getGraph().getDefaultParent());
+			List<Object> selectionCells = new ArrayList<>();
+			for (Object c : cells) {
+				mxICell mxc = (mxICell) c;
+				if (aGraph.getGraph().getOutgoingEdges(mxc).length > 0) {
+					System.out.println("Source: " + aGraph.getGraph().getModel().getValue(mxc));
+					selectionCells.add(mxc);
+				}
+			}
+			if (!selectionCells.isEmpty()) {
+				aGraph.getGraph().setSelectionCells(selectionCells);
+			}
+		}
+
+		protected void doGetSinks() {
+			Object[] cells = aGraph.getGraph().getChildVertices(aGraph.getGraph().getDefaultParent());
+			List<Object> selectionCells = new ArrayList<>();
+			for (Object c : cells) {
+				mxICell mxc = (mxICell) c;
+				if (aGraph.getGraph().getOutgoingEdges(mxc).length == 0) {
+					System.out.println("Sink: " + aGraph.getGraph().getModel().getValue(mxc));
+					selectionCells.add(mxc);
+				}
+			}
+			if (!selectionCells.isEmpty()) {
+				aGraph.getGraph().setSelectionCells(selectionCells);
+			}
+		}
+
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() instanceof mxGraphComponent)
@@ -890,108 +1042,36 @@ public class EditorMenuBar extends JMenuBar
 
 				if (analyzeType == AnalyzeType.IS_CONNECTED)
 				{
-					boolean isConnected = mxGraphStructure.isConnected(aGraph);
-
-					if (isConnected)
-					{
-						System.out.println("The graph is connected");
-					}
-					else
-					{
-						System.out.println("The graph is not connected");
-					}
+					doIsConnected();
 				}
 				else if (analyzeType == AnalyzeType.IS_SIMPLE)
 				{
-					boolean isSimple = mxGraphStructure.isSimple(aGraph);
-
-					if (isSimple)
-					{
-						System.out.println("The graph is simple");
-					}
-					else
-					{
-						System.out.println("The graph is not simple");
-					}
+					doIsSimple();
 				}
 				else if (analyzeType == AnalyzeType.IS_CYCLIC_DIRECTED)
 				{
-					boolean isCyclicDirected = mxGraphStructure.isCyclicDirected(aGraph);
-
-					if (isCyclicDirected)
-					{
-						System.out.println("The graph is cyclic directed");
-					}
-					else
-					{
-						System.out.println("The graph is acyclic directed");
-					}
+					doIsCyclicDirected();
 				}
 				else if (analyzeType == AnalyzeType.IS_CYCLIC_UNDIRECTED)
 				{
-					boolean isCyclicUndirected = mxGraphStructure.isCyclicUndirected(aGraph);
-
-					if (isCyclicUndirected)
-					{
-						System.out.println("The graph is cyclic undirected");
-					}
-					else
-					{
-						System.out.println("The graph is acyclic undirected");
-					}
+					doIsCyclicUndirected();
 				}
 				else if (analyzeType == AnalyzeType.COMPLEMENTARY)
 				{
-					graph.getModel().beginUpdate();
-
-					mxGraphStructure.complementaryGraph(aGraph);
-
-					mxGraphStructure.setDefaultGraphStyle(aGraph, true);
-					graph.getModel().endUpdate();
+					doComplementary(graph);
 				}
 				else if (analyzeType == AnalyzeType.REGULARITY)
 				{
-					try
-					{
-						int regularity = mxGraphStructure.regularity(aGraph);
-						System.out.println("Graph regularity is: " + regularity);
-					}
-					catch (StructuralException e1)
-					{
-						System.out.println("The graph is irregular");
-					}
+					doRegularity();
 				}
 				else if (analyzeType == AnalyzeType.COMPONENTS)
 				{
-					Object[][] components = mxGraphStructure.getGraphComponents(aGraph);
-					mxIGraphModel model = aGraph.getGraph().getModel();
-
-					for (int i = 0; i < components.length; i++)
-					{
-						System.out.print("Component " + i + " :");
-
-						for (int j = 0; j < components[i].length; j++)
-						{
-							System.out.print(" " + model.getValue(components[i][j]));
-						}
-
-						System.out.println(".");
-					}
-
-					System.out.println("Number of components: " + components.length);
+					doComponents();
 
 				}
 				else if (analyzeType == AnalyzeType.MAKE_CONNECTED)
 				{
-					graph.getModel().beginUpdate();
-
-					if (!mxGraphStructure.isConnected(aGraph))
-					{
-						mxGraphStructure.makeConnected(aGraph);
-						mxGraphStructure.setDefaultGraphStyle(aGraph, false);
-					}
-
-					graph.getModel().endUpdate();
+					doMakeConnected(graph);
 				}
 				else if (analyzeType == AnalyzeType.MAKE_SIMPLE)
 				{
@@ -1026,16 +1106,7 @@ public class EditorMenuBar extends JMenuBar
 				}
 				else if (analyzeType == AnalyzeType.IS_DIRECTED)
 				{
-					boolean isDirected = mxGraphProperties.isDirected(aGraph.getProperties(), mxGraphProperties.DEFAULT_DIRECTED);
-
-					if (isDirected)
-					{
-						System.out.println("The graph is directed.");
-					}
-					else
-					{
-						System.out.println("The graph is undirected.");
-					}
+					doIsDirected();
 				}
 				else if (analyzeType == AnalyzeType.GET_CUT_VERTEXES)
 				{
@@ -1068,43 +1139,11 @@ public class EditorMenuBar extends JMenuBar
 				}
 				else if (analyzeType == AnalyzeType.GET_SOURCES)
 				{
-					try
-					{
-						Object[] sourceVertices = mxGraphStructure.getSourceVertices(aGraph);
-						System.out.print("Source vertices of the graph are: [");
-						mxIGraphModel model = aGraph.getGraph().getModel();
-
-						for (int i = 0; i < sourceVertices.length; i++)
-						{
-							System.out.print(" " + model.getValue(sourceVertices[i]));
-						}
-
-						System.out.println(" ]");
-					}
-					catch (StructuralException e1)
-					{
-						System.out.println(e1);
-					}
+					doGetSources();
 				}
 				else if (analyzeType == AnalyzeType.GET_SINKS)
 				{
-					try
-					{
-						Object[] sinkVertices = mxGraphStructure.getSinkVertices(aGraph);
-						System.out.print("Sink vertices of the graph are: [");
-						mxIGraphModel model = aGraph.getGraph().getModel();
-
-						for (int i = 0; i < sinkVertices.length; i++)
-						{
-							System.out.print(" " + model.getValue(sinkVertices[i]));
-						}
-
-						System.out.println(" ]");
-					}
-					catch (StructuralException e1)
-					{
-						System.out.println(e1);
-					}
+					doGetSinks();
 				}
 				else if (analyzeType == AnalyzeType.PLANARITY)
 				{
