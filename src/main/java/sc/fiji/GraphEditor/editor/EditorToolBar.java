@@ -8,18 +8,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
-import javax.swing.JToolBar;
-import javax.swing.TransferHandler;
+import javax.swing.*;
 
+import com.mxgraph.model.mxGeometry;
+import com.mxgraph.model.mxICell;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.swing.util.mxGraphActions;
-import com.mxgraph.util.mxConstants;
-import com.mxgraph.util.mxEvent;
-import com.mxgraph.util.mxEventObject;
-import com.mxgraph.util.mxResources;
+import com.mxgraph.util.*;
 import com.mxgraph.util.mxEventSource.mxIEventListener;
 import com.mxgraph.view.mxGraph;
 import com.mxgraph.view.mxGraphView;
@@ -266,5 +261,60 @@ public class EditorToolBar extends JToolBar
 				}
 			}
 		});
+
+		JButton plusShapeSizeButton = new JButton("+");
+		plusShapeSizeButton.setPreferredSize(new Dimension(10, 10));
+		plusShapeSizeButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mxGraphComponent graphComponent = editor.getGraphComponent();
+				mxGraph graph = graphComponent.getGraph();
+				graph.setCellsResizable(true);
+				Object[] cells = graph.getSelectionCells();
+				if (cells == null || cells.length ==0) {
+					return;
+				}
+				for (Object cell : cells) {
+					mxICell mxc = (mxICell) cell;
+					if (graph.getModel().isVertex(mxc)) {
+						mxGeometry geom = mxc.getGeometry();
+						double srcWidth = geom.getWidth();
+						double srcHeight = geom.getHeight();
+						double maxWidth = srcWidth * 1.25;
+						double maxHeight = srcHeight * 1.25;
+						double ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+						graph.resizeCell(mxc, new mxRectangle(geom.getX(), geom.getY(), srcWidth*ratio, srcHeight*ratio));
+					}
+				}
+			}
+		});
+		add(plusShapeSizeButton);
+		JButton minusShapeSizeButton = new JButton("-");
+		minusShapeSizeButton.setPreferredSize(new Dimension(10, 10));
+		minusShapeSizeButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mxGraphComponent graphComponent = editor.getGraphComponent();
+				mxGraph graph = graphComponent.getGraph();
+				graph.setCellsResizable(true);
+				Object[] cells = graph.getSelectionCells();
+				if (cells == null || cells.length ==0) {
+					return;
+				}
+				for (Object cell : cells) {
+					mxICell mxc = (mxICell) cell;
+					if (graph.getModel().isVertex(mxc)) {
+						mxGeometry geom = mxc.getGeometry();
+						double srcWidth = geom.getWidth();
+						double srcHeight = geom.getHeight();
+						double maxWidth = srcWidth * 0.75;
+						double maxHeight = srcHeight * 0.75;
+						double ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+						graph.resizeCell(mxc, new mxRectangle(geom.getX(), geom.getY(), srcWidth*ratio, srcHeight*ratio));
+					}
+				}
+			}
+		});
+		add(minusShapeSizeButton);
 	}
 }
