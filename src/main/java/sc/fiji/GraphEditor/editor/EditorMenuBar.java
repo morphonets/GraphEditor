@@ -292,9 +292,9 @@ public class EditorMenuBar extends JMenuBar
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("stylesheet")));
 
 		submenu.add(editor.bind(mxResources.get("basicStyle"),
-				new EditorActions.StylesheetAction("basic-style.xml")));
+				new EditorActions.StylesheetAction("/basic-style.xml")));
 		submenu.add(editor.bind(mxResources.get("defaultStyle"), new EditorActions.StylesheetAction(
-				"default-style.xml")));
+				"/default-style.xml")));
 
 		createDeveloperMenu();
 
