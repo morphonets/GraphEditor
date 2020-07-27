@@ -101,10 +101,9 @@ public class EditorMenuBar extends JMenuBar
 		menu.add(editor.bind(mxResources.get("selectAll"), mxGraphActions.getSelectAllAction()));
 		menu.add(editor.bind(mxResources.get("selectNone"), mxGraphActions.getSelectNoneAction()));
 
-		menu.addSeparator();
-
+//		menu.addSeparator();
 //		menu.add(editor.bind(mxResources.get("warning"), new EditorActions.WarningAction()));
-		menu.add(editor.bind(mxResources.get("edit"), mxGraphActions.getEditAction()));
+//		menu.add(editor.bind(mxResources.get("edit"), mxGraphActions.getEditAction()));
 
 		// Creates the view menu
 		menu = add(new JMenu(mxResources.get("view")));
@@ -188,24 +187,15 @@ public class EditorMenuBar extends JMenuBar
 		submenu.add(editor.bind("100%", new EditorActions.ScaleAction(1)));
 		submenu.add(editor.bind("75%", new EditorActions.ScaleAction(0.75)));
 		submenu.add(editor.bind("50%", new EditorActions.ScaleAction(0.5)));
-
-		submenu.addSeparator();
-
 		submenu.add(editor.bind(mxResources.get("custom"), new EditorActions.ScaleAction(0)));
+		submenu.addSeparator();
+		submenu.add(editor.bind(mxResources.get("page"), new EditorActions.ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_PAGE)));
+		submenu.add(editor.bind(mxResources.get("width"), new EditorActions.ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_WIDTH)));
 
 		menu.addSeparator();
-
 		menu.add(editor.bind(mxResources.get("zoomIn"), mxGraphActions.getZoomInAction()));
-		menu.add(editor.bind(mxResources.get("zoomOut"), mxGraphActions.getZoomOutAction()));
-
-		menu.addSeparator();
-
-		menu.add(editor.bind(mxResources.get("page"), new EditorActions.ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_PAGE)));
-		menu.add(editor.bind(mxResources.get("width"), new EditorActions.ZoomPolicyAction(mxGraphComponent.ZOOM_POLICY_WIDTH)));
-
-		menu.addSeparator();
-
 		menu.add(editor.bind(mxResources.get("actualSize"), mxGraphActions.getZoomActualAction()));
+		menu.add(editor.bind(mxResources.get("zoomOut"), mxGraphActions.getZoomOutAction()));
 
 		// Creates the format menu
 		menu = add(new JMenu(mxResources.get("format")));
@@ -397,30 +387,20 @@ public class EditorMenuBar extends JMenuBar
 		submenu.add(new EditorActions.TogglePropertyItem(graph, mxResources.get("allowLoops"), "AllowLoops"));
 		submenu.add(new EditorActions.TogglePropertyItem(graph, mxResources.get("multigraph"), "Multigraph"));
 
-		// Creates the window menu
-		menu = add(new JMenu(mxResources.get("window")));
-
+		// Creates the Look and Feel menu
+		menu.addSeparator();
+		submenu = (JMenu) menu.add(new JMenu("Look & Feel"));
 		UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
-
-		for (int i = 0; i < lafs.length; i++)
-		{
+		for (int i = 0; i < lafs.length; i++) {
 			final String clazz = lafs[i].getClassName();
-			
-			menu.add(new AbstractAction(lafs[i].getName())
-			{
-				/**
-				 * 
-				 */
+			submenu.add(new AbstractAction(lafs[i].getName()) {
 				private static final long serialVersionUID = 7588919504149148501L;
 
-				public void actionPerformed(ActionEvent e)
-				{
+				public void actionPerformed(ActionEvent e) {
 					editor.setLookAndFeel(clazz);
 				}
 			});
 		}
-
-
 
 		// Creates the help menu
 		menu = add(new JMenu(mxResources.get("help")));
