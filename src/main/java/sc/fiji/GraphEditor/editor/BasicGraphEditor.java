@@ -168,6 +168,11 @@ public class BasicGraphEditor extends JPanel
 		final mxGraph graph = graphComponent.getGraph();
 		undoManager = createUndoManager();
 
+		// Apply sensible defaults
+		graphComponent.setAntiAlias(true);
+		graphComponent.setTextAntiAlias(true);
+		graphComponent.setTripleBuffered(true);
+
 		// Do not change the scale and translation after files have been loaded
 		graph.setResetViewOnRootChange(false);
 

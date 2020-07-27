@@ -62,9 +62,9 @@ public class EditorMenuBar extends JMenuBar
 		// Creates the file menu
 		menu = add(new JMenu(mxResources.get("file")));
 
-		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(), "/mx_shape_images/new.gif"));
+//		menu.add(editor.bind(mxResources.get("new"), new EditorActions.NewAction(), "/mx_shape_images/new.gif"));
 		menu.add(editor.bind(mxResources.get("openFile"), new EditorActions.OpenAction(), "/mx_shape_images/open.gif"));
-		menu.add(editor.bind(mxResources.get("importStencil"), new EditorActions.ImportAction(), "/mx_shape_images/open.gif"));
+//		menu.add(editor.bind(mxResources.get("importStencil"), new EditorActions.ImportAction(), "/mx_shape_images/open.gif"));
 
 		menu.addSeparator();
 
@@ -103,7 +103,7 @@ public class EditorMenuBar extends JMenuBar
 
 		menu.addSeparator();
 
-		menu.add(editor.bind(mxResources.get("warning"), new EditorActions.WarningAction()));
+//		menu.add(editor.bind(mxResources.get("warning"), new EditorActions.WarningAction()));
 		menu.add(editor.bind(mxResources.get("edit"), mxGraphActions.getEditAction()));
 
 		// Creates the view menu
@@ -171,7 +171,7 @@ public class EditorMenuBar extends JMenuBar
 			}
 		});
 
-		menu.add(new EditorActions.TogglePropertyItem(graphComponent, mxResources.get("antialias"), "AntiAlias", true));
+//		menu.add(new EditorActions.TogglePropertyItem(graphComponent, mxResources.get("antialias"), "AntiAlias", true));
 
 		menu.addSeparator();
 
@@ -302,7 +302,7 @@ public class EditorMenuBar extends JMenuBar
 		menu = add(new JMenu(mxResources.get("options")));
 
 		submenu = (JMenu) menu.add(new JMenu(mxResources.get("display")));
-		submenu.add(new EditorActions.TogglePropertyItem(graphComponent, mxResources.get("buffering"), "TripleBuffered", true));
+//		submenu.add(new EditorActions.TogglePropertyItem(graphComponent, mxResources.get("buffering"), "TripleBuffered", true));
 
 		submenu.add(new EditorActions.TogglePropertyItem(graphComponent, mxResources.get("preferPageSize"), "PreferPageSize", true, new ActionListener()
 		{
