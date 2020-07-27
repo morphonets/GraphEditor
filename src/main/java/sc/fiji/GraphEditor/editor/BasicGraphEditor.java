@@ -1,6 +1,7 @@
 package sc.fiji.GraphEditor.editor;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -172,6 +173,10 @@ public class BasicGraphEditor extends JPanel
 		graphComponent.setAntiAlias(true);
 		graphComponent.setTextAntiAlias(true);
 		graphComponent.setTripleBuffered(true);
+		graphComponent.getGraph().setGridSize(100);
+		graphComponent.setGridStyle(mxGraphComponent.GRID_STYLE_LINE);
+		graphComponent.setGridColor(Color.CYAN);
+		graphComponent.setGridVisible(false);
 
 		// Do not change the scale and translation after files have been loaded
 		graph.setResetViewOnRootChange(false);

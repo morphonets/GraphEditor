@@ -137,33 +137,18 @@ public class EditorActions
 	 *
 	 */
 	@SuppressWarnings("serial")
-	public static class ToggleGridItem extends JCheckBoxMenuItem
-	{
-		/**
-		 * 
-		 */
-		public ToggleGridItem(final BasicGraphEditor editor, String name)
-		{
-			super(name);
-			setSelected(true);
+	public static class ToggleGridItem extends JCheckBoxMenuItem {
 
-			addActionListener(new ActionListener()
-			{
-				/**
-				 * 
-				 */
-				public void actionPerformed(ActionEvent e)
-				{
-					mxGraphComponent graphComponent = editor
-							.getGraphComponent();
-					mxGraph graph = graphComponent.getGraph();
-					boolean enabled = !graph.isGridEnabled();
-
-					graph.setGridEnabled(enabled);
-					graphComponent.setGridVisible(enabled);
-					graphComponent.repaint();
-					setSelected(enabled);
-				}
+		public ToggleGridItem(final BasicGraphEditor editor, String name, boolean initialState) {
+			super(name, initialState);
+			addActionListener(e -> {
+				mxGraphComponent graphComponent = editor.getGraphComponent();
+				mxGraph graph = graphComponent.getGraph();
+				boolean enabled = !graph.isGridEnabled();
+				graph.setGridEnabled(enabled);
+				graphComponent.setGridVisible(enabled);
+				graphComponent.repaint();
+				setSelected(enabled);
 			});
 		}
 	}
