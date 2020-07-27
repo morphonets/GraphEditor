@@ -128,6 +128,8 @@ public class BasicGraphEditor extends JPanel
 	 * 
 	 */
 	protected mxKeyboardHandler keyboardHandler;
+	private final EditorConsole editorConsole;
+
 
 	/**
 	 * 
@@ -151,6 +153,7 @@ public class BasicGraphEditor extends JPanel
 			setModified(true);
 		}
 	};
+
 
 	/**
 	 * 
@@ -195,6 +198,9 @@ public class BasicGraphEditor extends JPanel
 
 		// Creates the library pane that contains the tabs with the palettes
 		libraryPane = new JTabbedPane();
+		editorConsole = new EditorConsole();
+		editorConsole.redirect();
+		insertConsole(getEditorConsole());
 
 		// Creates the inner split pane that contains the library with the
 		// palettes and the graph outline on the left side of the window
@@ -299,9 +305,6 @@ public class BasicGraphEditor extends JPanel
 				});
 	}
 
-	/**
-	 * 
-	 */
 	public EditorPalette insertPalette(String title)
 	{
 		final EditorPalette palette = new EditorPalette();
@@ -328,6 +331,18 @@ public class BasicGraphEditor extends JPanel
 		});
 
 		return palette;
+	}
+
+	private void insertConsole(final EditorConsole editorConsole) {
+		libraryPane.add("Console", editorConsole);
+
+		// Updates the widths of the palettes if the container size changes
+		libraryPane.addComponentListener(new ComponentAdapter() {
+			public void componentResized(final ComponentEvent e) {
+				final int w = editorConsole.getWidth() - editorConsole.getWidth();
+				editorConsole.setPreferredWidth(w);
+			}
+		});
 	}
 
 	/**
@@ -939,6 +954,10 @@ public class BasicGraphEditor extends JPanel
 		}
 
 		return layout;
+	}
+
+	public EditorConsole getEditorConsole() {
+		return editorConsole;
 	}
 
 }
